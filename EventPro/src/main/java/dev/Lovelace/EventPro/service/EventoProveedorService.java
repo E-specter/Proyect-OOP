@@ -1,6 +1,6 @@
 package dev.Lovelace.EventPro.service;
 
-import dev.Lovelace.EventPro.model.EventoProveedor;
+import dev.Lovelace.EventPro.model.Evento_Proveedores;
 import dev.Lovelace.EventPro.repository.EventoProveedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,21 +11,21 @@ import java.util.List;
 public class EventoProveedorService {
 
     @Autowired
-    private EventoProveedorRepository eventoProveedorRepository;
+    private EventoProveedorRepository evento_ProveedoresRepository;
 
-    public List<EventoProveedor> findAll() {
-        return eventoProveedorRepository.findAll();
+    public List<Evento_Proveedores> findAll() {
+        return evento_ProveedoresRepository.findAll();
     }
 
-    public EventoProveedor findById(Long id) {
-        return (EventoProveedor) eventoProveedorRepository.findById(id);
+    public Evento_Proveedores findById(Long id) {
+        return (Evento_Proveedores) evento_ProveedoresRepository.findById(id);
     }
 
-    public EventoProveedor save(EventoProveedor eventoProveedor) {
-        return eventoProveedorRepository.save(eventoProveedor);
+    public Evento_Proveedores save(Evento_Proveedores evento_proveedores) {
+        return evento_ProveedoresRepository.save(evento_proveedores);
     }
 
     public void deleteById(Long id) {
-        eventoProveedorRepository.deleteById(id);
+        evento_ProveedoresRepository.deleteById(id);
     }
 }

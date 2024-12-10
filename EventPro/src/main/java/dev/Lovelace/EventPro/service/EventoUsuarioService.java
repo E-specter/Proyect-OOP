@@ -1,6 +1,6 @@
 package dev.Lovelace.EventPro.service;
 
-import dev.Lovelace.EventPro.model.EventoUsuario;
+import dev.Lovelace.EventPro.model.Evento_Usuarios;
 import dev.Lovelace.EventPro.repository.EventoUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +13,15 @@ public class EventoUsuarioService {
     @Autowired
     private EventoUsuarioRepository eventoUsuarioRepository;
 
-    public List<EventoUsuario> findAll() {
+    public List<Evento_Usuarios> findAll() {
         return eventoUsuarioRepository.findAll();
     }
 
-    public EventoUsuario findById(Long id) {
-        return (EventoUsuario) eventoUsuarioRepository.findById(id);
+    public Evento_Usuarios findById(Long id) {
+        return (Evento_Usuarios) eventoUsuarioRepository.findById(id);
     }
 
-    public EventoUsuario save(EventoUsuario eventoUsuario) {
+    public Evento_Usuarios save(Evento_Usuarios eventoUsuario) {
         return eventoUsuarioRepository.save(eventoUsuario);
     }
 

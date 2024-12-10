@@ -1,11 +1,11 @@
 package dev.Lovelace.EventPro.repository;
 
-import dev.Lovelace.EventPro.model.EventoUsuario;
+import dev.Lovelace.EventPro.model.Evento_Usuarios;
 import java.util.List;
 
 public class EventoUsuarioRepository {
 
-  public List<EventoUsuario> findAll() {
+  public List<Evento_Usuarios> findAll() {
     throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
   }
 
@@ -13,7 +13,7 @@ public class EventoUsuarioRepository {
     throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
   }
 
-  public EventoUsuario save(EventoUsuario eventoUsuario) {
+  public Evento_Usuarios save(Evento_Usuarios evento_usuarios) {
     throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
   }
 

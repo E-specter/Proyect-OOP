@@ -1,25 +1,46 @@
 package dev.Lovelace.EventPro.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Proveedor")
 public class Proveedor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProveedor;
-    private String nombre;
-    private String fiscalID;
-    private String direccion;
-    private String telefono;
-    private String correo;
+  //llave primaria
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long idProveedor;
+  
+  @Column(name = "fiscalID", nullable = false, unique = true)
+  private String fiscalId;
+  
+  @Column(name = "nombre", nullable = false, unique = true)
+  private String nombre;
+  
+  @Column(name = "telefono", nullable = true)
+  private String telefono;
+  
+  @Column(name = "correo", nullable = true)
+  private String correo;
+  
+  @Column(name = "direccion", nullable = true)
+  private String direccion;
+  
+  @Column(name = "detalle", nullable = true)
+  private String detalle;
+  
+  @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Proveedor_Categorias> categorias;
+  
+  
 
-    // Getters y setters
+  @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Proveedor_Contactos> representantes;
+
+  @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Evento_Proveedores> patrocinios;
+
+
+  // Getters y Setters
 }
-
-
-

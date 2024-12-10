@@ -1,18 +1,24 @@
 package dev.Lovelace.EventPro.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "CategoriaEvento")
 public class CategoriaEvento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCategoriaEvento;
-    private String nombre;
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private byte idCategoriaEvento;
 
-    // Getters y setters
+  @Column(name = "nombre", nullable = false, unique = true)
+  private String nombre;
+
+  @Column(name = "descripcion", nullable = false, unique = true)
+  private String descripcion;
+
+  @OneToMany(mappedBy = "categoriaEvento", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Evento_Categorias> evento_categorias = new HashSet<>();
+
+  // Getters y setters
 }

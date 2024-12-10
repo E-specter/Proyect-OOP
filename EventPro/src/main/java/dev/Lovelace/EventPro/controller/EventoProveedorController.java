@@ -1,6 +1,6 @@
 package dev.Lovelace.EventPro.controller;
 
-import dev.Lovelace.EventPro.model.EventoProveedor;
+import dev.Lovelace.EventPro.model.Evento_Proveedores;
 import dev.Lovelace.EventPro.service.EventoProveedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,25 +12,25 @@ import java.util.List;
 public class EventoProveedorController {
 
     @Autowired
-    private EventoProveedorService eventoProveedorService;
+    private EventoProveedorService evento_proveedoresService;
 
     @GetMapping
-    public List<EventoProveedor> getAll() {
-        return eventoProveedorService.findAll();
+    public List<Evento_Proveedores> getAll() {
+        return evento_proveedoresService.findAll();
     }
 
     @GetMapping("/{id}")
-    public EventoProveedor getById(@PathVariable Long id) {
-        return eventoProveedorService.findById(id);
+    public Evento_Proveedores getById(@PathVariable Long id) {
+        return evento_proveedoresService.findById(id);
     }
 
     @PostMapping
-    public EventoProveedor create(@RequestBody EventoProveedor eventoProveedor) {
-        return eventoProveedorService.save(eventoProveedor);
+    public Evento_Proveedores create(@RequestBody Evento_Proveedores eventoProveedor) {
+        return evento_proveedoresService.save(eventoProveedor);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        eventoProveedorService.deleteById(id);
+        evento_proveedoresService.deleteById(id);
     }
 }

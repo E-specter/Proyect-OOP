@@ -1,16 +1,16 @@
-package dev.Lovelace.EventPro.Util;
+package dev.Lovelace.EventPro.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-
-  public static Connection getConnection() throws SQLException {
-    String url = "jdbc:mysql://localhost:3306/your_database_name"; // Replace with your database URL
-    String user = "your_username"; // Replace with your database username
-    String password = "your_password"; // Replace with your database password
-
-    return DriverManager.getConnection(url, user, password);
+/*
+  public static ConnectionTurso getConnection() throws SQLException {
+    String url = "libsql://eventpro-e-specter.aws-us-west-2.turso.io ";
+    String token = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MzM3MTE1NzMsImlkIjoiYWY3NjExYWQtZWU0Yi00NTg5LTlhNGEtNTI4NDIyMDg2ZTEzIn0.sOBG5MYncgxLXYutDN_rEpVS89sOz3ZZ0YrgosoQPoFXESFZSRtUFUN2EfmR8_HSGHXdsid_1L6gbqQJj2z6Dw";
+    return DriverManager.getConnection(url, token);
   }
+*/
+  
 }

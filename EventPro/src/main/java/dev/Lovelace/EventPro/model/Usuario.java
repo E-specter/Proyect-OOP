@@ -1,11 +1,8 @@
 package dev.Lovelace.EventPro.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Usuario")
@@ -13,15 +10,18 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;
-    private String personalID;
-    private String fiscalID;
-    private String nombres;
-    private String apellidos;
-    private String cargo;
-    private String telefono;
+
+    @Column(nullable = false, unique = true)
+    private String nombre;
+
+    @Column(nullable = false)
     private String correo;
-    private String contrasenia;
+    
+    @Column(nullable = false)
+    private String contrasenia; //Este es el campo de contraseña, quiero que sea segura
 
-    // Getters y setters
+    @OneToMany(mappedBy = "usuario")
+    private Set<Evento_Usuarios> usuarios;
+
+    // Getters y Setters
 }
-

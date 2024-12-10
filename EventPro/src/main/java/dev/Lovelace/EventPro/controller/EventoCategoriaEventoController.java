@@ -1,7 +1,7 @@
 package dev.Lovelace.EventPro.controller;
 
-import dev.Lovelace.EventPro.model.EventoCategoriaEvento;
-import dev.Lovelace.EventPro.service.EventoCategoriaEventoService;
+import dev.Lovelace.EventPro.model.Evento_Categorias;
+import dev.Lovelace.EventPro.service.Evento_CategoriasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +12,20 @@ import java.util.List;
 public class EventoCategoriaEventoController {
 
     @Autowired
-    private EventoCategoriaEventoService eventoCategoriaEventoService;
+    private Evento_CategoriasService eventoCategoriaEventoService;
 
     @GetMapping
-    public List<EventoCategoriaEvento> getAll() {
+    public List<Evento_Categorias> getAll() {
         return eventoCategoriaEventoService.findAll();
     }
 
     @GetMapping("/{id}")
-    public EventoCategoriaEvento getById(@PathVariable Long id) {
+    public Evento_Categorias getById(@PathVariable Long id) {
         return eventoCategoriaEventoService.findById(id);
     }
 
     @PostMapping
-    public EventoCategoriaEvento create(@RequestBody EventoCategoriaEvento eventoCategoriaEvento) {
+    public Evento_Categorias create(@RequestBody Evento_Categorias eventoCategoriaEvento) {
         return eventoCategoriaEventoService.save(eventoCategoriaEvento);
     }
 

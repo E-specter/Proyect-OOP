@@ -1,6 +1,6 @@
 package dev.Lovelace.EventPro.controller;
 
-import dev.Lovelace.EventPro.model.EventoUsuario;
+import dev.Lovelace.EventPro.model.Evento_Usuarios;
 import dev.Lovelace.EventPro.service.EventoUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,25 +12,25 @@ import java.util.List;
 public class EventoUsuarioController {
 
     @Autowired
-    private EventoUsuarioService eventoUsuarioService;
+    private EventoUsuarioService evento_usuarioService;
 
     @GetMapping
-    public List<EventoUsuario> getAll() {
-        return eventoUsuarioService.findAll();
+    public List<Evento_Usuarios> getAll() {
+        return evento_usuarioService.findAll();
     }
 
     @GetMapping("/{id}")
-    public EventoUsuario getById(@PathVariable Long id) {
-        return eventoUsuarioService.findById(id);
+    public Evento_Usuarios getById(@PathVariable Long id) {
+        return evento_usuarioService.findById(id);
     }
 
     @PostMapping
-    public EventoUsuario create(@RequestBody EventoUsuario eventoUsuario) {
-        return eventoUsuarioService.save(eventoUsuario);
+    public Evento_Usuarios create(@RequestBody Evento_Usuarios eventoUsuario) {
+        return evento_usuarioService.save(eventoUsuario);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        eventoUsuarioService.deleteById(id);
+        evento_usuarioService.deleteById(id);
     }
 }
