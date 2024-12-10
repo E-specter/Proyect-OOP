@@ -32,6 +32,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Claves clonadas
+.env
+
 =======
 # Compiled class file
 *.class
